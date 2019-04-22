@@ -1,53 +1,65 @@
 ---
-title: "DataVizProject"
-author: "Huan LE, Mael-Antoine GNANOU, Otmane M'BIDA"
-date: "22 avril 2019"
+title: "DataViz Project : Correlation between the 2018 FIFA World Cup and depression"
+author: "[Huan LE, Mael-Antoine GNANOU, Otmane M'BIDA](https://github.com/huanlebui)"
+date: "`r format(Sys.time(), '%d %B %Y')`"
 output:
-  html_document:
+  epuRate::PCTG:
     toc: TRUE
-    code_folding: "hide"
-    number_sections: TRUE
+    code: "show"
+    number_sections: FALSE
 ---
 
-```{r setup, include=FALSE}
+```{r, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, eval = TRUE, message = FALSE, warning = FALSE, fig.align='center')
+# You need these libraries to run this template:
+library(rmarkdown)    # install.packages("rmarkdown") 
+library(epuRate)      # devtools::install_github("holtzy/epuRate", force=TRUE)
 ```
 
-# DataViz Project : Correlation between the 2018 World Cup and depression
+<br><br><br><br>
 
-We would like to know if there is a correlation between major sport events and depression within the winning country. We have chosen the 2018 World Cup and the country of France aka The Champions.
+>We would like to know if there is a correlation between **major sport events** and **depression** within the winning country. We have chosen the 2018 FIFA World Cup and the country of France aka *le pays des Champions du Monde*.
 
-We got the data from Google Trends.
+>...and we got the data from Google Trends.
 
-## Loading libaries
+
+# Loading libraries
+***
+We will only need `ggplot2` and `dplyr`.
 
 ```{r}
 library(ggplot2)
 library(dplyr)
 ```
 
-## Loading data
 
-We host the data file on Github.
 
-```{r loading}
+
+# Loading data
+***
+We host the data file on our Github.
+
+```{r}
 data <- read.csv("https://raw.githubusercontent.com/huanlebui/DataVizProject/master/data.csv")
 
 data$week <- as.Date(data$week)
 
 ```
 
-## A first look into the data
 
-We actually had two seperate CSV files so we merged them into one. Under the depression and cdm attributes we have the trending level of the words "depression" (in terms of search queries) and "coupe du monde" (in terms of occurence in newsfeeds) throughout the year of 2018.
 
+# A quick look into the data
+***
+We actually had two seperate CSV files so we merged them into one. Under the depression and cdm attributes we have the trending levels of the keywords *depression* (in terms of search queries) and *coupe du monde* (in terms of occurence in newsfeeds) respectively, throughout the year of 2018 in France.
 
 ```{r}
 head(data)
 ```
 
-## A primitive line chart
 
+
+# A primitive line chart
+***
 Let's look at the trending of the two keywords in 2018.
 
 ```{r}
@@ -57,3 +69,8 @@ data %>%
     geom_line( aes(y = cdm), color ="blue" )
 
 ```
+
+
+
+
+
