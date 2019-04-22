@@ -1,6 +1,6 @@
 ---
 title: "DataVizProject"
-author: "Huan LE"
+author: "Huan LE, Mael-Antoine GNANOU, Otmane M'BIDA"
 date: "22 avril 2019"
 output:
   html_document:
