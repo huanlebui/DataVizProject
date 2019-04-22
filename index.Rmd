@@ -1,0 +1,57 @@
+---
+title: "DataVizProject"
+author: "Huan LE"
+date: "22 avril 2019"
+output:
+  html_document:
+    toc: TRUE
+    code_folding: "hide"
+    number_sections: TRUE
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, eval = TRUE, message = FALSE, warning = FALSE, fig.align='center')
+```
+
+# DataViz Project : Correlation between the 2018 World Cup and depression
+
+We would like to know if there is a correlation between major sport events and depression within the winning country. We have chosen the 2018 World Cup and the country of France aka The Champions.
+
+We got the data from Google Trends.
+
+## Loading libaries
+
+```{r}
+library(ggplot2)
+library(dplyr)
+```
+
+## Loading data
+
+We host the data file on Github.
+
+```{r loading}
+data <- read.csv("https://raw.githubusercontent.com/huanlebui/DataVizProject/master/data.csv")
+
+data$week <- as.Date(data$week)
+
+```
+
+## A first look into the data
+
+We actually had two
+
+
+```{r}
+head(data)
+```
+
+## Nope
+
+```{r}
+data %>%
+  ggplot( aes(x=week) ) +
+    geom_line( aes(y = depression), color = "red" ) +
+    geom_line( aes(y = cdm), color ="blue" )
+
+```
