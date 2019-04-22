@@ -66,7 +66,9 @@ Let's look at the trending of the two keywords in 2018.
 data %>%
   ggplot( aes(x=week) ) +
     geom_line( aes(y = depression), color = "red" ) +
-    geom_line( aes(y = cdm), color ="blue" )
+    geom_line( aes(y = cdm), color ="blue" ) +
+    xlab("Time") +
+    ylab("Trending")
 
 ```
 
