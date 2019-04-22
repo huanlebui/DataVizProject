@@ -1,6 +1,6 @@
 ---
 title: "DataViz Project : Correlation between the 2018 FIFA World Cup and depression"
-author: "[Huan LE, Mael-Antoine GNANOU, Otmane M'BIDA](https://github.com/huanlebui)"
+author: "[Huan LE, Mael-Antoine GNANOU, Otmane M'BIDA](https://www.youtube.com/watch?v=dQw4w9WgXcQ)"
 date: "`r format(Sys.time(), '%d %B %Y')`"
 output:
   epuRate::PCTG:
@@ -72,5 +72,3 @@ data %>%
 
 
 We can observe a slight decrease during a relatively long period of time for the keyword *depression* around the month of July. And of course we can easily notice the obvious skyrocketing keyword *coupe du monde* between June and July.
-
-
