@@ -16,11 +16,16 @@ library(rmarkdown)    # install.packages("rmarkdown")
 library(epuRate)      # devtools::install_github("holtzy/epuRate", force=TRUE)
 ```
 
-<br><br><br><br>
+<br><br>
+
+![](cdm.jpg){width=460px} ![](depression.jpg){width=245px}
+
+<br><br>
 
 >We would like to know if there is a correlation between **major sport events** and **depression** within the winning country. We have chosen the 2018 FIFA World Cup and the country of France aka *le pays des Champions du Monde*.
 
 >...and we got the data from Google Trends.
+
 
 
 # Loading libraries
