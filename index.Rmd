@@ -42,10 +42,10 @@ library(dplyr)
 
 # Loading data
 ***
-We host the data file on our Github.
+We also host the data file on our Github, if you want to [check it out](https://github.com/huanlebui/DataVizProject/blob/master/data.csv).
 
 ```{r}
-data <- read.csv("https://raw.githubusercontent.com/huanlebui/DataVizProject/master/data.csv")
+data <- read.csv("data.csv")
 
 data$week <- as.Date(data$week)
 
