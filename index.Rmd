@@ -55,7 +55,7 @@ data$week <- as.Date(data$week)
 
 # A quick look into the data
 ***
-We actually had two seperate CSV files so we merged them into one. Under the `depression` and `cdm` attributes we have the trending levels of the keywords **depression** (in terms of search queries) and **coupe du monde** (in terms of occurence in newsfeeds) respectively, throughout the year of 2018 in France.
+We actually had two seperate CSV files so we merged them into one. Under the `depression` and `cdm` attributes we have the trending levels of the keywords **depression** (in terms of search queries) and **coupe du monde** (in terms of occurrences in newsfeeds) respectively, throughout the year of 2018 in France.
 
 ```{r}
 head(data)
