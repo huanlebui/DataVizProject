@@ -84,8 +84,11 @@ data %>%
 
 We can observe a slight decrease during a relatively long period of time for the keyword **depression** around the month of July. And of course we can easily notice the obvious skyrocketing keyword **coupe du monde** between June and July.
 
+***
 
 #Bubble graph
+
+***
 
 ```{r}
 #Bubble_graph
@@ -96,8 +99,7 @@ data %>%
     theme_ipsum()
     
 
-# Interactive graph
-ggplotly(p)
+
 
 ```
 
