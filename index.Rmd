@@ -30,7 +30,7 @@ library(epuRate)      # devtools::install_github("holtzy/epuRate", force=TRUE)
 
 # Loading libraries
 ***
-We will only need `ggplot2` and `dplyr`.
+We will need `ggplot2`, `dplyr` and `hrbrthemes`.
 
 ```{r}
 library(ggplot2)
@@ -48,7 +48,7 @@ We also host the data file on our Github, if you want to [check that out](https:
 ```{r}
 data <- read.csv("data.csv")
 
-data$week <- as.Date(data$week)
+data$week <- as.Date(data$week) # transform the date format into something more comfortable to handle with
 
 ```
 
@@ -59,41 +59,60 @@ data$week <- as.Date(data$week)
 We actually had two seperate CSV files so we merged them into one. Under the `depression` and `cdm` attributes we have the trending levels of the keywords **depression** (in terms of search queries) and **coupe du monde** (in terms of occurrences in newsfeeds) respectively, throughout the year of 2018 in France.
 
 ```{r}
-head(data)
+data
 ```
 
 
 
 # A primitive line chart
 ***
-Let's look at the trending of the two keywords in 2018.
+Let's look at the trending levels of the two keywords in 2018.
 
 ```{r}
 data %>%
-  ggplot( aes(x=week) ) +
-    geom_line( aes(y = depression), color = "red" ) +
-    geom_line( aes(y = cdm), color ="blue" ) +
+  ggplot( aes(x=week) ) + 
+    geom_line( aes(y = cdm, colour ="#e74c3c"), size = 1) + # cdm's trending curve
+    geom_line( aes(y = depression, colour = "#c10000"), size = 1) + # depression's trending curve
+    scale_color_discrete(name = "Keywords", labels = c("depression", "coupe du monde")) + # legends
+    geom_hline(yintercept = 77, size = 0.5, color="#626567", linetype="dashed") + # to see more clearly the period of decrease of the keyword depression
+    geom_vline(xintercept = as.Date("2018-06-03"), color="#626567", size = 0.5, linetype="dashed") + # to focus on the period of the world cup and slightly afterwards
+    geom_vline(xintercept = as.Date("2018-08-05"), color="#626567", size = 0.5, linetype="dashed") +
     xlab("Time") +
-    ylab("Trending")
+    ylab("Trending") +
+    theme_ipsum() # adding some theme
 
 ```
 
 
 We can observe a slight decrease during a relatively long period of time for the keyword **depression** around the month of July. And of course we can easily notice the obvious skyrocketing keyword **coupe du monde** between June and July.
 
-#Bubble graph
+# A bubble chart
 ***
+
+The line chart doesn't help us see the correlation clearly. Now let's plot some bubble chart to see how it goes.
 
 ```{r}
 #Bubble_graph
 data %>%
-  ggplot( aes(x=week,y=depression,fill=depression, size=cdm) ) +
+  ggplot( aes(x=week,y=depression,fill=depression, size=cdm) ) + # cdm determines the size and depression determines the color (of the bubbles)
     geom_point(alpha=1, shape=21) +
     scale_fill_gradient(low="yellow", high="red")+
     theme_ipsum()
 
-
-
 ```
 
-This graph allows us to  understand that when the score for the World cup is high, so during the competition, the depression rate is below the mean of year 2018.So we can deduce that world cup can reduce depression.
+As the sizes of the bubbles are determined by the keyword **coupe du monde** and their colors by **depression**, we can clearly see the correlation between these two. The more yellow the bubbles get the bigger they get, and the other way around.
+
+# Conclusion
+***
+
+As we already know, **correlation** and **causation** (or causality) are not the same. These two events, the 2018 FIFA World Cup and the decrease of depression, can happen at the same time but it doesn't mean that one has some effect on the other. If we want to have a thorough analysis, we would have to focus on other factors such as the weather, vacations, etc..
+
+Anyway, one thing remains certain : on est les champions !
+
+<br><br>
+
+![](cdm_bis.jpg)
+
+
+
