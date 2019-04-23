@@ -86,10 +86,12 @@ data %>%
 
 We can observe a slight decrease during a relatively long period of time for the keyword **depression** around the month of July. And of course we can easily notice the obvious skyrocketing keyword **coupe du monde** between June and July.
 
+We chose this type of chart because these two events have their increase/decrease at the same period of time. But we admit that it is not perfect that's why we will try something better.
+
 # A bubble chart
 ***
 
-The line chart doesn't help us see the correlation clearly. Now let's plot some bubble chart to see how it goes.
+As we just said, the line chart doesn't help us see the correlation clearly. Now let's plot some bubble chart to see how it goes.
 
 ```{r}
 #Bubble_graph
@@ -103,10 +105,12 @@ data %>%
 
 As the sizes of the bubbles are determined by the keyword **coupe du monde** and their colors by **depression**, we can clearly see the correlation between these two. The more yellow the bubbles get the bigger they get, and the other way around.
 
+We confidently believe that this type of chart is the best to show the correlation.
+
 # Conclusion
 ***
 
-As we already know, **correlation** and **causation** (or causality) are not the same. These two events, the 2018 FIFA World Cup and the decrease of depression, can happen at the same time but it doesn't mean that one has some effect on the other. If we want to have a thorough analysis, we would have to focus on other factors such as the weather, vacations, etc..
+As everyone knows, **correlation** and **causation** (or causality) are not the same. These two events, the 2018 FIFA World Cup and the decrease of depression, can happen at the same time but it doesn't mean that one has some effect on the other. If we want to have a thorough analysis, we would have to focus on other factors such as the weather, vacations, etc..
 
 Anyway, one thing remains certain : on est les champions !
 
