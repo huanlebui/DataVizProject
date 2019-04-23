@@ -42,7 +42,7 @@ library(dplyr)
 
 # Loading data
 ***
-We also host the data file on our Github, if you want to [check it out](https://github.com/huanlebui/DataVizProject/blob/master/data.csv).
+We also host the data file on our Github, if you want to [check that out](https://github.com/huanlebui/DataVizProject/blob/master/data.csv).
 
 ```{r}
 data <- read.csv("data.csv")
