@@ -14,5 +14,5 @@ The 2018 FIFA World Cup and the country of France have been chosen accordingly t
 
 ## How
 
-The analysis is based on data found on Google Trend which gives the trending levels of keywords during a certain period of time and within a certain country. Then R Markdown is used via R Studio to write to code, to display some charts, to discuss some results. And then everything is pushed through Github Desktop to this very Github.
+The analysis is based on data found on Google Trend which gives the trending levels of keywords during a certain period of time and within a certain country. Then R Markdown is used via R Studio to write the code, to display some charts, to discuss some results. And then everything is pushed through Github Desktop to this very Github.
 
