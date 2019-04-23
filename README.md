@@ -6,7 +6,7 @@ This project is led by three brilliant students : Huan LE, Maël-Antoine GNANOU 
 
 ## What
 
-It analyzes the correlation between major sport events and (the decrease of) depression within the winning country.
+It analyzes the correlation between major sport events and the variation of depression within the winning country.
 
 ## When/Where
 
