@@ -18,7 +18,7 @@ library(epuRate)      # devtools::install_github("holtzy/epuRate", force=TRUE)
 
 <br><br>
 
-![](cdm.jpg){width=460px} ![](depression.jpg){width=245px}
+![](cdm.jpg){width=520px} ![](depression.jpg){width=277px}
 
 <br><br>
 
